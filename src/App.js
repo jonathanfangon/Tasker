@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 // import './App.css';
 
 import { BrowserRouter as Router, Routes, Route, Redirect } from 'react-router-dom';
@@ -10,14 +10,17 @@ import Login from './components/Login';
 import Register from './components/Register';
 
 function App () {
+
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+
     return (
         <Fragment>
             <Router>
                 <div className = "container">
                     <Routes>
-                        <Route path='login' render = {props => <Login {...props} />}/>
-                        <Route path='/register' render = {props => <Register {...props} />}/>
-                        <Route path='/dashboard' render = {props => <Dashboard {...props} />}/>
+                        <Route path="/login" element={<Login/>}/>
+                        <Route path='/register' element={<Register/>}/>
+                        <Route path='/dashboard' element={<Dashboard/>}/>
                     </Routes>
                 </div>
             </Router>

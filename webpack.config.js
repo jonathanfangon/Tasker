@@ -9,7 +9,8 @@ module.exports = {
     ],
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/'
     },
     plugins: [
         new HTMLWebpackPlugin({
@@ -50,6 +51,7 @@ module.exports = {
         host: 'localhost',
         hot: true,
         port: 8080,
+        historyApiFallback: true,
         static: {
           directory: path.join(__dirname, 'dist'),
           publicPath: '/',
