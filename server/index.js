@@ -18,7 +18,7 @@ app.use('/auth', authRoute);
 
 //dashboard route
 
-app.use('/dashoboard', dashboardRoute);
+app.use('/dashboard', dashboardRoute);
 
 app.listen(PORT, () => {
     console.log('Listening on port ' + PORT);

@@ -13,7 +13,7 @@ router.post('/register', validInfo, async (req, res) => {
         //1.destructure req.body (username, passwword)
         const { name, password } = req.body;
 
-        //2.check if user exists (if not throw err)
+        //2.check if user exists (if so throw err)
         const user = await pool.query('SELECT * FROM users WHERE user_name = $1', [
             name
         ])
