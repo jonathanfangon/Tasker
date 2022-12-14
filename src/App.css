@@ -1,0 +1,15 @@
+input[type='text'], textarea {
+    background-color: #dadada;
+}
+
+input[type='password'], textarea {
+    background-color: #dadada;
+}
+
+.btn {
+    color: #dadada;
+}
+
+/* nav {
+    width: 100vw;
+} */

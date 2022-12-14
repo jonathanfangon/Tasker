@@ -38,14 +38,10 @@ module.exports = {
               'css-loader',
             ],
           },
-          {
-            test: /\.css$/i,
-            use: ['style-loader', 'css-loader'],
-          },
         ],
     },
     resolve: {
-    extensions: ['.js', '.jsx'],
+      extensions: ['.js', '.jsx'],
     },
     devServer: {
         host: 'localhost',
