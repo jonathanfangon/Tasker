@@ -13,3 +13,7 @@ input[type='password'], textarea {
 /* nav {
     width: 100vw;
 } */
+
+#landing-cont {
+    background-color: #202020;
+}
