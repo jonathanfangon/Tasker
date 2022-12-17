@@ -16,3 +16,5 @@ CREATE TABLE todos(
   PRIMARY KEY (todo_id),
   FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
+
+INSERT INTO todos (user_id, description) VALUES ('8a2d425d-44be-4d71-91d3-4661d799a179', 'clean room');

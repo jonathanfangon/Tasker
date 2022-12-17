@@ -1,8 +1,14 @@
 import React, { Fragment, useState, useEffect } from 'react';
 
+import InputTodo from "./todolist/InputTodo";
+import ListTodos from "./todolist/ListTodos";
+
+
 const Dashboard = ({ setAuth }) => {
 
     const [name, setName] = useState('');
+    const [allTodos, setAllTodos] = useState([]);
+    const [todosChange, setTodosChange] = useState(false);
 
     async function getName() {
         try {
@@ -13,7 +19,11 @@ const Dashboard = ({ setAuth }) => {
 
             const parseRes = await response.json();
 
-            setName(parseRes.user_name);
+            console.log(parseRes)
+
+            setAllTodos(parseRes);
+
+            setName(parseRes[0].user_name);
 
         } catch (error) {
             console.error(error.message);
@@ -28,7 +38,8 @@ const Dashboard = ({ setAuth }) => {
 
     useEffect(() => {
         getName();
-    }, []);
+        setTodosChange(false);
+    }, [todosChange]);
 
     return (
         <Fragment>
@@ -68,9 +79,20 @@ const Dashboard = ({ setAuth }) => {
                 </div>
             </nav> */}
 
-            <h1 className='text-center my-3'>Dashboard</h1>
+            {/* <h1 className='text-center my-3'>Dashboard</h1>
             <h2 className='text-center'>Welcome back {name}!</h2>
-            <button className='btn btn-primary' onClick={e => logout(e)}>Logout</button>
+            <button className='btn btn-primary' onClick={e => logout(e)}>Logout</button> */}
+            <div>
+                <div className="d-flex mt-5 justify-content-around">
+                    <h2>{name} 's Todo List</h2>
+                    <button onClick={(e) => logout(e)} className="btn btn-primary">
+                    Logout
+                    </button>
+                </div>
+
+                <InputTodo setTodosChange={setTodosChange} />
+                <ListTodos allTodos={allTodos} setTodosChange={setTodosChange} />
+            </div>
         </Fragment>
     );
 };
