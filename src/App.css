@@ -17,3 +17,15 @@ input[type='password'], textarea {
 #landing-cont {
     background-color: #202020;
 }
+
+th {
+    color: #dadada;
+}
+
+#descriptions {
+    color: #dadada;
+}
+#logout-btn {
+    max-height: 30px;
+    align-self: center;
+}

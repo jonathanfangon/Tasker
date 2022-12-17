@@ -84,8 +84,8 @@ const Dashboard = ({ setAuth }) => {
             <button className='btn btn-primary' onClick={e => logout(e)}>Logout</button> */}
             <div>
                 <div className="d-flex mt-5 justify-content-around">
-                    <h2>{name} 's Todo List</h2>
-                    <button onClick={(e) => logout(e)} className="btn btn-primary">
+                    <h1>{name}'s Todo List</h1>
+                    <button id='logout-btn' onClick={(e) => logout(e)} className="btn btn-primary btn-sm">
                     Logout
                     </button>
                 </div>
