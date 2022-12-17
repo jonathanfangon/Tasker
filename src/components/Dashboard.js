@@ -32,7 +32,7 @@ const Dashboard = ({ setAuth }) => {
 
     return (
         <Fragment>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            {/* <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#">Navbar</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -66,9 +66,10 @@ const Dashboard = ({ setAuth }) => {
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </div>
-            </nav>
+            </nav> */}
 
-            <h1>Dashboard {name}</h1>
+            <h1 className='text-center my-3'>Dashboard</h1>
+            <h2 className='text-center'>Welcome back {name}!</h2>
             <button className='btn btn-primary' onClick={e => logout(e)}>Logout</button>
         </Fragment>
     );

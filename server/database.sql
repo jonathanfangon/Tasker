@@ -8,3 +8,11 @@ CREATE TABLE users(
 );
 
 INSERT INTO users (user_name, user_password) VALUES ('jonathan', 'fangon');
+
+CREATE TABLE todos(
+  todo_id SERIAL,
+  user_id UUID,
+  description VARCHAR(255) NOT NULL,
+  PRIMARY KEY (todo_id),
+  FOREIGN KEY (user_id) REFERENCES users(user_id)
+);

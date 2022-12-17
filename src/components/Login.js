@@ -42,18 +42,34 @@ const Login = ({ setAuth }) => {
         <Fragment>
             <h1 className='text-center my-5'>Login</h1>
             <form onSubmit={onSubmitForm}>
-                <input 
+                {/*old input for username/*}
+                {/* <input 
                     type = 'text'
                     name= 'name'
-                    placeholder='username'
+                    placeholder='Username'
                     className='form-control my-3'
                     value={name}
                     onChange={e => onChange(e)}
-                />
+                /> */}
+                <div className="input-group mb-3">
+                    <div className="input-group-prepend">
+                        <span className="input-group-text" id="basic-addon1">@</span>
+                    </div>
+                    <input 
+                        type="text" 
+                        name='name'
+                        className="form-control" 
+                        placeholder="Username" 
+                        aria-label="Username" 
+                        aria-describedby="basic-addon1"
+                        value={name}
+                        onChange={e => onChange(e)}
+                    />
+                </div>
                 <input 
                     type = 'password'
                     name= 'password'
-                    placeholder='password'
+                    placeholder='Password'
                     className='form-control my-3'
                     value={password}
                     onChange={e => onChange(e)}
