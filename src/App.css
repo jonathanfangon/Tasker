@@ -15,10 +15,6 @@ input[type='date'], textarea {
     color: #dadada;
 }
 
-/* nav {
-    width: 100vw;
-} */
-
 #landing-cont {
     background-color: #202020;
 }
@@ -30,6 +26,7 @@ th {
 #descriptions {
     color: #dadada;
 }
+
 #logout-btn {
     max-height: 30px;
     align-self: center;

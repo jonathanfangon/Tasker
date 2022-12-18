@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react';
 
 import InputTodo from "./todolist/InputTodo";
 import ListTodos from "./todolist/ListTodos";
-import './theme.css';
+import './themes/theme.css';
 
 
 const Dashboard = ({ setAuth }) => {
