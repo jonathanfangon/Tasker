@@ -29,6 +29,9 @@ router.post("/todos", authorization, async (req, res) => {
     try {
       // console.log(req.body);
       const { description, todo_date } = req.body;
+      if(description === '') {
+        return res.status(422).json('Invalid input for todo description');
+      }
       const newTodo = await pool.query(
         "INSERT INTO todos (user_id, description, todo_date) VALUES ($1, $2, $3) RETURNING *",
         [req.user, description, todo_date]
