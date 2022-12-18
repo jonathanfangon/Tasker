@@ -18,3 +18,15 @@ CREATE TABLE todos(
 );
 
 INSERT INTO todos (user_id, description) VALUES ('8a2d425d-44be-4d71-91d3-4661d799a179', 'clean room');
+
+/* Adding date to todos table */
+
+ALTER TABLE todos ADD COLUMN todo_date DATE NOT NULL;
+
+/* Made every user_name in users unique */
+
+ALTER TABLE users ADD UNIQUE (user_name);
+
+/* test date */
+
+INSERT INTO todos (user_id, description, todo_date) VALUES ('8a2d425d-44be-4d71-91d3-4661d799a179', 'wash clothes', '2023-01-01');

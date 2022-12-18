@@ -10,7 +10,7 @@ router.get('/', authorization, async (req, res) => {
 
         // get todo name and description for a specified user id
         const user = await pool.query(
-          "SELECT u.user_name, t.todo_id, t.description FROM users AS u LEFT JOIN todos AS t ON u.user_id = t.user_id WHERE u.user_id = $1",
+          "SELECT u.user_name, t.todo_id, t.description, t.todo_date FROM users AS u LEFT JOIN todos AS t ON u.user_id = t.user_id WHERE u.user_id = $1",
           [req.user]
         );
 
@@ -28,10 +28,10 @@ router.get('/', authorization, async (req, res) => {
 router.post("/todos", authorization, async (req, res) => {
     try {
       // console.log(req.body);
-      const { description } = req.body;
+      const { description, todo_date } = req.body;
       const newTodo = await pool.query(
-        "INSERT INTO todos (user_id, description) VALUES ($1, $2) RETURNING *",
-        [req.user, description]
+        "INSERT INTO todos (user_id, description, todo_date) VALUES ($1, $2, $3) RETURNING *",
+        [req.user, description, todo_date]
       );
   
       console.log(`Added task: ${req.body.description}!`);

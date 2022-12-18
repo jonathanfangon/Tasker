@@ -24,7 +24,7 @@ const ListTodos = ({ allTodos, setTodosChange }) => {
     setTodos(allTodos);
   }, [allTodos]);
 
-  console.log(todos);
+  // console.log(todos);
 
   return (
     <Fragment>
@@ -33,6 +33,7 @@ const ListTodos = ({ allTodos, setTodosChange }) => {
         <thead>
           <tr>
             <th>Description</th>
+            <th>Due Date</th>
             <th>Edit</th>
             <th>Delete</th>
           </tr>
@@ -49,6 +50,7 @@ const ListTodos = ({ allTodos, setTodosChange }) => {
             todos.map(todo => (
               <tr key={todo.todo_id}>
                 <td id="descriptions">{todo.description}</td>
+                <td id="descriptions">{todo.todo_date.slice(0, 10)}</td>
                 <td>
                   <EditTodo todo={todo} setTodosChange={setTodosChange} />
                 </td>

@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 
 const InputTodo = ({ setTodosChange }) => {
   const [description, setDescription] = useState("");
+  const [todo_date, setTodoDate] = useState(new Date());
 
   const onSubmitForm = async e => {
     e.preventDefault();
@@ -10,8 +11,8 @@ const InputTodo = ({ setTodosChange }) => {
 
       myHeaders.append("Content-Type", "application/json");
       myHeaders.append("token", localStorage.token);
-
-      const body = { description };
+      
+      const body = { description, todo_date };
       const response = await fetch("http://localhost:3000/dashboard/todos", {
         method: "POST",
         headers: myHeaders,
@@ -24,6 +25,7 @@ const InputTodo = ({ setTodosChange }) => {
 
       setTodosChange(true);
       setDescription("");
+      setTodoDate(new Date());
       // window.location = "/";
     } catch (err) {
       console.error(err.message);
@@ -31,7 +33,7 @@ const InputTodo = ({ setTodosChange }) => {
   };
   return (
     <Fragment>
-      <h1 className="text-center my-5">Input Todo</h1>
+      <h2 className="text-center my-5">Input Todo</h2>
       <form className="d-flex" onSubmit={onSubmitForm}>
         <input
           type="text"
@@ -39,6 +41,13 @@ const InputTodo = ({ setTodosChange }) => {
           className="form-control"
           value={description}
           onChange={e => setDescription(e.target.value)}
+        />
+        <input
+          type="date"
+          placeholder="due date"
+          className="form-control"
+          value={todo_date}
+          onChange={e => setTodoDate(e.target.value)}
         />
         <button className="btn btn-success ">Add</button>
       </form>
