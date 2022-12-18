@@ -6,6 +6,10 @@ input[type='password'], textarea {
     background-color: #dadada;
 }
 
+input[type='date'], textarea {
+    background-color: #dadada;
+}
+
 .btn {
     color: #dadada;
 }

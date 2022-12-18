@@ -11,7 +11,7 @@ const InputTodo = ({ setTodosChange }) => {
 
       myHeaders.append("Content-Type", "application/json");
       myHeaders.append("token", localStorage.token);
-      
+
       const body = { description, todo_date };
       const response = await fetch("http://localhost:3000/dashboard/todos", {
         method: "POST",
@@ -37,7 +37,7 @@ const InputTodo = ({ setTodosChange }) => {
       <form className="d-flex" onSubmit={onSubmitForm}>
         <input
           type="text"
-          placeholder="add todo"
+          placeholder="Description"
           className="form-control"
           value={description}
           onChange={e => setDescription(e.target.value)}
