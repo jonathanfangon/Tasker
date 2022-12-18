@@ -8,6 +8,7 @@ input[type='password'], textarea {
 
 input[type='date'], textarea {
     background-color: #dadada;
+    width: 200px;
 }
 
 .btn {

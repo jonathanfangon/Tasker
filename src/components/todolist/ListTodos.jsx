@@ -26,6 +26,14 @@ const ListTodos = ({ allTodos, setTodosChange }) => {
 
   // console.log(todos);
 
+  //if the due date of a task is today, todo_date will be changed to 'Today'
+  let today = new Date();
+  let dd = String(today.getDate()).padStart(2, '0');
+  let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  let yyyy = today.getFullYear();
+
+  today = yyyy + '-' + mm + '-' + dd;
+
   return (
     <Fragment>
       {" "}
@@ -50,7 +58,7 @@ const ListTodos = ({ allTodos, setTodosChange }) => {
             todos.map(todo => (
               <tr key={todo.todo_id}>
                 <td id="descriptions">{todo.description}</td>
-                <td id="descriptions">{todo.todo_date.slice(0, 10)}</td>
+                <td id="descriptions">{todo.todo_date.slice(0, 10) === today ? 'Today' : todo.todo_date.slice(0, 10)}</td>
                 <td>
                   <EditTodo todo={todo} setTodosChange={setTodosChange} />
                 </td>
