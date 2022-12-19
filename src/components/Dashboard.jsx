@@ -68,7 +68,7 @@ const Dashboard = ({ setAuth }) => {
                 <InputTodo setTodosChange={setTodosChange} />
                 <ListTodos allTodos={allTodos} setTodosChange={setTodosChange} />
             </div>
-            <button onClick={toggleTheme}>Toggle Theme</button>
+            <button className='btn btn-secondary btn-sm' onClick={toggleTheme}>Toggle Theme</button>
         </Fragment>
     );
 };
