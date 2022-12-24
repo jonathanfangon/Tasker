@@ -6,6 +6,7 @@ module.exports = async (req, res, next) => {
 
         const jwtToken = req.header("token");
 
+        //if user does not have token, they will not be authorized
         if(!jwtToken) {
             return res.status(403).json('You are not authorized.')
         }

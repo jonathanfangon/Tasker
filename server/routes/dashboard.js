@@ -14,8 +14,6 @@ router.get('/', authorization, async (req, res) => {
           [req.user]
         );
 
-        // console.log(req.user);
-
         res.json(user.rows);
         
     } catch (error) {
@@ -27,7 +25,6 @@ router.get('/', authorization, async (req, res) => {
 //create a todo, using authorization middleware
 router.post("/todos", authorization, async (req, res) => {
     try {
-      // console.log(req.body);
       const { description, todo_date } = req.body;
       if(description === '') {
         return res.status(422).json('Invalid input for todo description');
@@ -44,7 +41,7 @@ router.post("/todos", authorization, async (req, res) => {
     }
   });
   
-  //update a todo
+  //update a todo (not working)
   router.put("/todos/:id", authorization, async (req, res) => {
     try {
       const { id } = req.params;

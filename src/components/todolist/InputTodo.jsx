@@ -19,6 +19,7 @@ const InputTodo = ({ setTodosChange }) => {
         body: JSON.stringify(body)
       });
 
+      //parse response
       const parseResponse = await response.json();
 
       console.log(parseResponse);

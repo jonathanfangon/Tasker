@@ -1,11 +1,9 @@
 body {
-    /* background-color: #202020; */
-    background-image: url("https://miro.medium.com/max/1024/1*9WeJrBj6pp-qnGjRGg2NUw.png");
+    background-color: #202020;
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    overflow-y: hidden;
 }
 
 h1 {

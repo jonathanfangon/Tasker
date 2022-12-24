@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 
+//inport components and styles
 import InputTodo from "./todolist/InputTodo";
 import ListTodos from "./todolist/ListTodos";
 import './themes/theme.css';
@@ -12,6 +13,7 @@ const Dashboard = ({ setAuth }) => {
     const [todosChange, setTodosChange] = useState(false);
     const [theme, setTheme] = useState('dark');
 
+    //get the username for the current user
     async function getName() {
         try {
             const response = await fetch('http://localhost:3000/dashboard', {
@@ -38,6 +40,7 @@ const Dashboard = ({ setAuth }) => {
         setAuth(false);
     }
 
+    //on click functionality for changing themes
     const toggleTheme = () => {
         if(theme === 'light') {
             setTheme('dark');
@@ -51,6 +54,7 @@ const Dashboard = ({ setAuth }) => {
         setTodosChange(false);
     }, [todosChange]);
 
+    //effect for changing the background image/color
     useEffect(() => {
         document.body.className = theme;
     }, [theme]);

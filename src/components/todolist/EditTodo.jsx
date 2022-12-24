@@ -1,5 +1,8 @@
 import React, { Fragment, useState } from "react";
 
+
+//Edit feature is currently not working!
+
 const EditTodo = ({ todo, setTodosChange }) => {
   //editText function
   const editText = async (id) => {

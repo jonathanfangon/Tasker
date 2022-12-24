@@ -20,11 +20,10 @@ const ListTodos = ({ allTodos, setTodosChange }) => {
     }
   }
 
+  //lists all todos from the database
   useEffect(() => {
     setTodos(allTodos);
   }, [allTodos]);
-
-  // console.log(todos);
 
   //if the due date of a task is today, todo_date will be changed to 'Today'
   let today = new Date();

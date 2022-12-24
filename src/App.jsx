@@ -12,6 +12,7 @@ import Landing from './components/Landing';
 
 function App () {
 
+    //state to check if a user is authenticated
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const setAuth = (boolean) => {
