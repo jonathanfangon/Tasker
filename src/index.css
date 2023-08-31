@@ -4,6 +4,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-y: hidden;
 }
 
 h1 {
@@ -19,4 +20,15 @@ h2 {
 h3 {
     font-size: 20px;
     color: #dadada;
+}
+
+#edit-btn {
+    background-color: rgb(51, 155, 138);
+}
+
+#bottom-btns{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
